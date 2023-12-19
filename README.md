@@ -8,6 +8,7 @@ This Golang project is a simple CRUD (Create, Read, Update, Delete) application 
 
 - **Golang:** The project is built using the Go programming language.
 - **PostgreSQL:** Data storage and retrieval are handled by PostgreSQL, a powerful open-source relational database.
+- **Docker:** postgres image is run using docker
 
 ## Setup
 
@@ -17,8 +18,12 @@ This Golang project is a simple CRUD (Create, Read, Update, Delete) application 
    cd golang-crud-api
    go mod download
    go run .
+
+2. **Download docker to use this postgres image**
+   ```bash
+   docker run -d -p 5432:5432 --name my-postgres -e POSTGRES_PASSWORD=postgres postgres
    
-2. **create product table in postgres**
+3. **Create product table in postgres**
    ```bash
    CREATE TABLE products (
        id SERIAL PRIMARY KEY,
@@ -27,7 +32,7 @@ This Golang project is a simple CRUD (Create, Read, Update, Delete) application 
        description TEXT
    );
 
-3. **API Endpoints**
+4. **API Endpoints**
 
      ```bash
       POST /products: Create a new product.
