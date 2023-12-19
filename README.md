@@ -16,29 +16,28 @@ This Golang project is a simple CRUD (Create, Read, Update, Delete) application 
 - **Golang:** The project is built using the Go programming language.
 - **PostgreSQL:** Data storage and retrieval are handled by PostgreSQL, a powerful open-source relational database.
 
-## Project Structure
-
-The project follows a standard Go project layout:
-
-
-- **cmd:** Contains the main application entry point.
-- **internal/app:** Houses the application-specific logic, including handlers, services, and repositories.
-- **db/migrations:** Stores database migration files for managing database schema changes.
-- **models:** Defines the data models, including the `Product` struct.
-
 ## Setup
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo
+   git clone https://github.com/brijeshjha/golang-crud-api.git
+   cd golang-crud-api
+   go mod download
+   go run .
    
-go mod download
+2. **create product table in postgres**
+   ```bash
+   CREATE TABLE products (
+       id SERIAL PRIMARY KEY,
+       product_name VARCHAR(255) NOT NULL,
+       price DOUBLE PRECISION NOT NULL,
+       description TEXT
+   );
 
-go run cmd/main.go
+3. **API Endpoints**
 
-API Endpoints
-POST /products: Create a new product.
-GET /products/:id: Retrieve product details by ID.
-PUT /products/:id: Update product details.
-DELETE /products/:id: Delete a product.
+     ```bash
+      POST /products: Create a new product.
+      GET /products/:id: Retrieve product details by ID.
+      PUT /products/:id: Update product details.
+      DELETE /products/:id: Delete a product.
