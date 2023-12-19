@@ -4,13 +4,6 @@
 
 This Golang project is a simple CRUD (Create, Read, Update, Delete) application that utilizes PostgreSQL as its database. The project defines a `Product` struct to represent the data model for products.
 
-## Features
-
-- **Create:** Add new products to the database.
-- **Read:** Retrieve product information from the database.
-- **Update:** Modify existing product details.
-- **Delete:** Remove products from the database.
-
 ## Technologies Used
 
 - **Golang:** The project is built using the Go programming language.
